@@ -1,8 +1,8 @@
 <?php 
-  require_once "N1.Ej1.Athletes.php";
-  require_once "N1.Ej1.Events.php";
-  require_once "N1.Ej1.Results.php";
-  require_once "N1.Ej1.OlympicGames.php";
+  require_once "php Athletes.php";
+  require_once "Events.php";
+  require_once "Results.php";
+  require_once "OlympicGames.php";
 
 
 

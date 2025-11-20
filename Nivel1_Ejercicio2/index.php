@@ -5,22 +5,13 @@ require_once "BankTransfer.php";
 require_once "PaymentProcessor.php";
 require_once "PaypalPaymentGateway.php";
 require_once "StripePaymentGateway.php";
+require_once "PaymentCreator.php";
 
-
-$bankTransfer = new BankTransfer();
-$paypal = new PayPalPaymentGateway();
-$stripe = new StripePaymentGateway();
-
-$paymentProcessor = [
-    new PaymentProcessor($bankTransfer),
-    new PaymentProcessor($paypal),
-    new PaymentProcessor($stripe)
-];
+$creator = new PaymentCreator();
+$paymentProcessor = $creator->paymentProcessorCreate();
 
 foreach ($paymentProcessor as $processor) {
     echo $processor->procesarPago(100.00) . PHP_EOL;
 }      
-
-
 
 ?>
